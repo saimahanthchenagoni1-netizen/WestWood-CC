@@ -80,7 +80,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <Logo className="w-14 h-14" />
                 <h3 className="text-3xl font-black font-oswald text-warrior-orange leading-none">Westwood<br/>Cricket Club</h3>
               </div>
-              <p className="text-slate-400 max-w-sm leading-relaxed mb-6 mx-auto md:mx-0 font-medium">
+              <p className="text-slate-400 max-sm leading-relaxed mb-6 mx-auto md:mx-0 font-medium">
                 Established with excellence in mind. Westwood High School's premier cricket program dedicated to competition and sportsmanship.
               </p>
             </div>
@@ -107,8 +107,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </ul>
             </div>
           </div>
-          <div className="pt-12 border-t border-white/5 text-center text-[11px] text-slate-600 uppercase tracking-[0.4em] font-black">
-            <p>Westwood Cricket Club &copy; 2026. Official Athletic Program.</p>
+          
+          <div className="pt-12 border-t border-white/5 text-center">
+            <div className="text-[11px] text-slate-600 uppercase tracking-[0.4em] font-black mb-2">
+              <p>Westwood Cricket Club &copy; 2026. Official Athletic Program.</p>
+            </div>
+            <div className="text-[10px] text-warrior-orange/60 font-black uppercase tracking-[0.6em] mt-4 opacity-80">
+              Made by Sai
+            </div>
           </div>
         </div>
       </footer>

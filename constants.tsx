@@ -2,6 +2,19 @@ import { Player } from './types.ts';
 
 export const CLUB_NAME = "Westwood Cricket Club";
 export const CLUB_MOTTO = "Unity. Discipline. Competitive Cricket.";
+export const CLUB_EMAIL = "wwhscricket@gmail.com";
+
+// Updated with provided links
+export const INTEREST_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeGOctAjXh7AIsQWYt5JbCkZRpkhWOsfyVa-iDLZDrDhpadkw/viewform";
+export const PARENT_CONSENT_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc9eZsjZdeEbnd7BucD2o7Z07joFLMhOPBa2a2o3k8Q3QAyEA/viewform";
+export const INSTAGRAM_URL = "https://www.instagram.com/warrior.cricket?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==";
+
+export const MEETING_INFO = {
+  frequency: "Twice a month",
+  day: "Fridays",
+  time: "After School",
+  location: "The green field next to the tennis courts"
+};
 
 export const TEAM_ROSTER: Player[] = [
   { id: 1, name: "Sanskar C", isCaptain: true, role: "Captain", specialty: "All-rounder" },

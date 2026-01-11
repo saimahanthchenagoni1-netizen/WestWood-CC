@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { CLUB_EMAIL, INSTAGRAM_URL } from '../constants.tsx';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -56,6 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="hidden lg:flex space-x-10 text-white font-black uppercase text-[11px] tracking-[0.2em]">
             <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-warrior-orange transition-all relative group">Home<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-warrior-orange transition-all group-hover:w-full"></span></a>
             <a href="#tournament" onClick={(e) => handleNavClick(e, 'tournament')} className="hover:text-warrior-orange transition-all relative group">Match Center<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-warrior-orange transition-all group-hover:w-full"></span></a>
+            <a href="#info" onClick={(e) => handleNavClick(e, 'info')} className="hover:text-warrior-orange transition-all relative group">Join Us<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-warrior-orange transition-all group-hover:w-full"></span></a>
             <a href="#leadership" onClick={(e) => handleNavClick(e, 'leadership')} className="hover:text-warrior-orange transition-all relative group">Leadership<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-warrior-orange transition-all group-hover:w-full"></span></a>
             <a href="#roster" onClick={(e) => handleNavClick(e, 'roster')} className="hover:text-warrior-orange transition-all relative group">Team Roster<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-warrior-orange transition-all group-hover:w-full"></span></a>
           </div>
@@ -80,29 +81,40 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <Logo className="w-14 h-14" />
                 <h3 className="text-3xl font-black font-oswald text-warrior-orange leading-none">Westwood<br/>Cricket Club</h3>
               </div>
-              <p className="text-slate-400 max-sm leading-relaxed mb-6 mx-auto md:mx-0 font-medium">
-                Established with excellence in mind. Westwood High School's premier cricket program dedicated to competition and sportsmanship.
+              <p className="text-slate-400 max-sm leading-relaxed mb-6 mx-auto md:mx-0 font-medium italic">
+                Representing Westwood High with pride. Follow the official channel for updates.
               </p>
+              <div className="flex justify-center md:justify-start space-x-4 mt-6">
+                 <a 
+                   href={INSTAGRAM_URL} 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-warrior-orange transition-colors"
+                   aria-label="Instagram"
+                 >
+                   <i className="fa-brands fa-instagram"></i>
+                 </a>
+              </div>
             </div>
             <div>
               <h4 className="font-black mb-8 uppercase text-warrior-orange tracking-[0.3em] text-xs">Site Links</h4>
               <ul className="space-y-4 text-slate-400 text-sm font-bold uppercase tracking-widest">
                 <li><a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="hover:text-white transition-colors flex items-center justify-center md:justify-start group"><i className="fa-solid fa-chevron-right text-[10px] mr-3 text-warrior-orange opacity-0 group-hover:opacity-100 transition-all"></i> Home</a></li>
                 <li><a href="#tournament" onClick={(e) => handleNavClick(e, 'tournament')} className="hover:text-white transition-colors flex items-center justify-center md:justify-start group"><i className="fa-solid fa-chevron-right text-[10px] mr-3 text-warrior-orange opacity-0 group-hover:opacity-100 transition-all"></i> Match Center</a></li>
+                <li><a href="#info" onClick={(e) => handleNavClick(e, 'info')} className="hover:text-white transition-colors flex items-center justify-center md:justify-start group"><i className="fa-solid fa-chevron-right text-[10px] mr-3 text-warrior-orange opacity-0 group-hover:opacity-100 transition-all"></i> Join the Team</a></li>
                 <li><a href="#roster" onClick={(e) => handleNavClick(e, 'roster')} className="hover:text-white transition-colors flex items-center justify-center md:justify-start group"><i className="fa-solid fa-chevron-right text-[10px] mr-3 text-warrior-orange opacity-0 group-hover:opacity-100 transition-all"></i> Team Roster</a></li>
-                <li><a href="#leadership" onClick={(e) => handleNavClick(e, 'leadership')} className="hover:text-white transition-colors flex items-center justify-center md:justify-start group"><i className="fa-solid fa-chevron-right text-[10px] mr-3 text-warrior-orange opacity-0 group-hover:opacity-100 transition-all"></i> Leadership</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-black mb-8 uppercase text-warrior-orange tracking-[0.3em] text-xs">Contact Us</h4>
+              <h4 className="font-black mb-8 uppercase text-warrior-orange tracking-[0.3em] text-xs">Official Contact</h4>
               <ul className="space-y-4 text-slate-400 text-sm font-medium">
                 <li className="flex items-start justify-center md:justify-start">
                   <i className="fa-solid fa-map-pin mt-1 mr-4 text-warrior-orange"></i> 
-                  Westwood High Sports Grounds
+                  Green Field (By Tennis Courts)
                 </li>
                 <li className="flex items-center justify-center md:justify-start">
                   <i className="fa-solid fa-envelope-open-text mr-4 text-warrior-orange"></i> 
-                  warriors@westwoodhigh.edu
+                  {CLUB_EMAIL}
                 </li>
               </ul>
             </div>

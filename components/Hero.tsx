@@ -55,19 +55,19 @@ const Hero: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
             <a 
-              href="#tournament" 
-              onClick={(e) => handleNavClick(e, 'tournament')}
+              href="#info" 
+              onClick={(e) => handleNavClick(e, 'info')}
               className="bg-warrior-orange hover:bg-white text-white hover:text-warrior-orange px-12 py-5 rounded-lg font-black uppercase tracking-widest text-lg transition-all transform hover:-translate-y-1 shadow-[0_10px_40px_rgba(179,93,40,0.4)] flex items-center justify-center group"
             >
-              Match Center
-              <i className="fa-solid fa-chart-line ml-3 group-hover:scale-125 transition-transform"></i>
+              Join the Roster
+              <i className="fa-solid fa-user-plus ml-3 group-hover:scale-125 transition-transform"></i>
             </a>
             <a 
-              href="#roster" 
-              onClick={(e) => handleNavClick(e, 'roster')}
+              href="#tournament" 
+              onClick={(e) => handleNavClick(e, 'tournament')}
               className="bg-white/10 border-2 border-white/20 hover:bg-white hover:text-warrior-dark text-white px-12 py-5 rounded-lg font-black uppercase tracking-widest text-lg transition-all flex items-center justify-center backdrop-blur-md"
             >
-              The Team
+              Match Center
             </a>
           </div>
         </div>

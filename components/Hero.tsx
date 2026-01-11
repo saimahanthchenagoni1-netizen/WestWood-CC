@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               onClick={(e) => handleNavClick(e, 'info')}
               className="bg-warrior-orange hover:bg-white text-white hover:text-warrior-orange px-12 py-5 rounded-lg font-black uppercase tracking-widest text-lg transition-all transform hover:-translate-y-1 shadow-[0_10px_40px_rgba(179,93,40,0.4)] flex items-center justify-center group"
             >
-              Join the Roster
+              Join the Club
               <i className="fa-solid fa-user-plus ml-3 group-hover:scale-125 transition-transform"></i>
             </a>
             <a 

@@ -1,5 +1,4 @@
-
-import { Player } from './types';
+import { Player } from './types.ts';
 
 export const CLUB_NAME = "Westwood Cricket Club";
 export const CLUB_MOTTO = "Unity. Discipline. Competitive Cricket.";

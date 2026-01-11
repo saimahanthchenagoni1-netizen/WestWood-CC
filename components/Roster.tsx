@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { TEAM_ROSTER } from '../constants';
+import { TEAM_ROSTER } from '../constants.tsx';
 
 const Roster: React.FC = () => {
   return (

@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { TEAM_ROSTER } from '../constants';
-import { getCricketInsight } from '../services/geminiService';
+import { TEAM_ROSTER } from '../constants.tsx';
+import { getCricketInsight } from '../services/geminiService.ts';
 
 const Leadership: React.FC = () => {
   const captain = TEAM_ROSTER.find(p => p.isCaptain);
@@ -13,9 +12,14 @@ const Leadership: React.FC = () => {
   useEffect(() => {
     const fetchInsight = async () => {
       if (captain) {
-        const text = await getCricketInsight(captain.name);
-        setInsight(text || "");
-        setLoading(false);
+        try {
+          const text = await getCricketInsight(captain.name);
+          setInsight(text || "Victory belongs to the most persevering.");
+        } catch (err) {
+          setInsight("Unity and discipline define the Westwood spirit.");
+        } finally {
+          setLoading(false);
+        }
       }
     };
     fetchInsight();

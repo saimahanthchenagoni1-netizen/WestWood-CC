@@ -1,10 +1,9 @@
-
 import React from 'react';
-import Layout from './components/Layout';
-import Hero from './components/Hero';
-import TournamentFeed from './components/TournamentFeed';
-import Leadership from './components/Leadership';
-import Roster from './components/Roster';
+import Layout from './components/Layout.tsx';
+import Hero from './components/Hero.tsx';
+import TournamentFeed from './components/TournamentFeed.tsx';
+import Leadership from './components/Leadership.tsx';
+import Roster from './components/Roster.tsx';
 
 const App: React.FC = () => {
   return (

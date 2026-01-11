@@ -35,7 +35,7 @@ export const getTournamentReport = async (): Promise<{ text: string; sources: an
     const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: "LATEST SCORE: Westwood High School (clubId 1000013) USHSC CricClubs. NEXT MATCH: Opponent and Date. Format: [Score] | [Next Match Info]. Be extremely brief.",
+      contents: "Search for 'Westwood High School Cricket' on CricClubs. Find the most recent match score and the next scheduled match. Output format: [Recent Result] | [Next Match Date and Opponent]. Be extremely brief.",
       config: {
         tools: [{ googleSearch: {} }],
       },
@@ -48,7 +48,7 @@ export const getTournamentReport = async (): Promise<{ text: string; sources: an
   } catch (error) {
     console.error("Tournament report error:", error);
     return { 
-      text: "Latest: Westwood won their last fixture. Next: Check official schedule for upcoming match details.",
+      text: "Syncing Live | See official schedule for upcoming details.",
       sources: []
     };
   }

@@ -17,10 +17,10 @@ const InfoSection: React.FC = () => {
                 New Update
               </div>
               <h2 className="text-5xl md:text-6xl font-black text-warrior-dark font-oswald mb-8 uppercase italic leading-none">
-                Join the <span className="text-warrior-orange">Team</span>
+                Join the <span className="text-warrior-orange">Club</span>
               </h2>
               <p className="text-slate-600 text-xl font-medium leading-relaxed mb-10 max-w-lg">
-                Hey Warriors! If you are interested in playing cricket or want to join Westwood's Cricket Team, come check us out!
+                Hey Warriors! If you are interested in playing cricket or want to join Westwood's Cricket Club, come check us out!
               </p>
               
               <div className="space-y-6 mb-12">
@@ -31,7 +31,7 @@ const InfoSection: React.FC = () => {
                   <div>
                     <div className="text-slate-400 font-bold uppercase text-[10px] tracking-widest mb-1">Meetings</div>
                     <div className="text-warrior-dark font-black text-xl italic font-oswald">
-                      {MEETING_INFO.frequency} on {MEETING_INFO.day} {MEETING_INFO.time}
+                      {MEETING_INFO.frequency} {MEETING_INFO.time}
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ const InfoSection: React.FC = () => {
             <div className="lg:w-1/2 w-full">
               <div className="bg-warrior-dark p-10 md:p-12 rounded-[2.5rem] shadow-2xl border-t-4 border-warrior-orange space-y-6">
                 <div>
-                  <h3 className="text-3xl font-black text-white font-oswald mb-2 italic uppercase">Join the Roster</h3>
+                  <h3 className="text-3xl font-black text-white font-oswald mb-2 italic uppercase">Register Today</h3>
                   <p className="text-slate-400 mb-6 font-medium italic">
                     Ready to show your skills? Get on the scouting list for the upcoming season.
                   </p>

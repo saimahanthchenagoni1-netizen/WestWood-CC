@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { getTournamentReport } from '../services/geminiService';
+import { getTournamentReport } from '../services/geminiService.ts';
 
 const SCOREBOARD_URL = "https://ddomain.cricclubs.com/USHSC/viewScorecard.do?matchId=1053&clubId=1000013";
 
@@ -13,6 +12,8 @@ const TournamentFeed: React.FC = () => {
       try {
         const report = await getTournamentReport();
         setData(report);
+      } catch (err) {
+        console.error("Failed to load match center:", err);
       } finally {
         setLoading(false);
       }
@@ -50,7 +51,7 @@ const TournamentFeed: React.FC = () => {
           <h2 className="text-6xl md:text-8xl font-black text-white font-oswald italic uppercase tracking-tighter leading-none mb-6">
             Scoreboard <span className="text-warrior-orange">Live</span>
           </h2>
-          <p className="text-slate-400 text-lg md:text-xl font-medium max-w-2xl mx-auto italic">
+          <p className="text-slate-400 text-lg md:text-xl font-medium max-w-2xl mx-auto italic text-center">
             Direct real-time updates from the USHSC Championship trail.
           </p>
         </div>
@@ -116,10 +117,10 @@ const TournamentFeed: React.FC = () => {
               href={SCOREBOARD_URL}
               target="_blank" 
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-white text-warrior-dark px-12 md:px-20 py-6 md:py-8 rounded-[30px] font-black uppercase tracking-[0.3em] text-xl md:text-2xl shadow-[0_30px_70px_rgba(0,0,0,0.6)] hover:-translate-y-3 active:scale-95 transition-all duration-500"
+              className="group relative overflow-hidden bg-white text-warrior-dark px-12 md:px-20 py-6 md:py-8 rounded-[30px] font-black uppercase tracking-[0.3em] text-xl md:text-2xl shadow-[0_30px_70px_rgba(0,0,0,0.6)] hover:-translate-y-3 active:scale-95 transition-all duration-500 text-center"
             >
               <div className="absolute inset-0 bg-warrior-orange translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-              <span className="relative z-10 flex items-center group-hover:text-white transition-colors">
+              <span className="relative z-10 flex items-center justify-center group-hover:text-white transition-colors">
                 View Full Scoreboard 
                 <i className="fa-solid fa-arrow-right-long ml-6 transition-transform group-hover:translate-x-4"></i>
               </span>

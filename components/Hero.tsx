@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { CLUB_NAME, CLUB_MOTTO } from '../constants';
+import { CLUB_NAME, CLUB_MOTTO } from '../constants.tsx';
 
 const Hero: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

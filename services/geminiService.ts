@@ -1,14 +1,17 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize AI lazily to prevent top-level process.env access errors in browser
+const getAIClient = () => {
+  const apiKey = process.env.API_KEY || "";
+  return new GoogleGenAI({ apiKey });
+};
 
 /**
  * Fetches a quick coaching insight.
- * Optimized for speed with low temperature and concise system instructions.
  */
 export const getCricketInsight = async (playerName: string) => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Quickly generate a 1-sentence inspirational coaching tip for ${playerName}.`,
@@ -19,16 +22,17 @@ export const getCricketInsight = async (playerName: string) => {
     });
     return response.text;
   } catch (error) {
+    console.error("Insight error:", error);
     return "Focus on the basics and trust your training.";
   }
 };
 
 /**
  * Fetches tournament data using Google Search grounding.
- * Optimized prompt for the fastest possible retrieval of current match data.
  */
 export const getTournamentReport = async (): Promise<{ text: string; sources: any[] }> => {
   try {
+    const ai = getAIClient();
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: "LATEST SCORE: Westwood High School (clubId 1000013) USHSC CricClubs. NEXT MATCH: Opponent and Date. Format: [Score] | [Next Match Info]. Be extremely brief.",
@@ -42,7 +46,7 @@ export const getTournamentReport = async (): Promise<{ text: string; sources: an
       sources: response.candidates?.[0]?.groundingMetadata?.groundingChunks || [] 
     };
   } catch (error) {
-    console.error("Error fetching tournament report:", error);
+    console.error("Tournament report error:", error);
     return { 
       text: "Latest: Westwood won their last fixture. Next: Check official schedule for upcoming match details.",
       sources: []
